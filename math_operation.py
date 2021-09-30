@@ -20,7 +20,15 @@ class matchStatisticks():
             return "List must consist of numbers."
         except ZeroDivisionError:
             return "Division by 0."
-    
+
+    def unloaded_estimator(self, numbers:list) -> float:
+        try:
+            return sum([(float(i) - self.expected_value(numbers)) ** 2 for i in numbers]) / len(numbers) - 1
+        except ValueError:
+            return "List must consist of numbers."
+        except ZeroDivisionError:
+            return "Division by 0."
+
     def standard_deviation(self, numbers:list) -> float:
         try:
             return math.sqrt(self.Variance(numbers))
@@ -36,4 +44,5 @@ mat = matchStatisticks()
 print(mat.sum_list(List[1]))
 print(mat.expected_value(List[1]))
 print(mat.Variance(List[1]))
+print(mat.unloaded_estimator(List[1]))
 print(mat.standard_deviation(List[1]))
