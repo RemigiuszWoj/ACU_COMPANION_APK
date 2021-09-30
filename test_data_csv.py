@@ -21,16 +21,16 @@ def test_split_header():
     file.split_header()
     assert file.header == ['a', 'b', 'c']
 
-def test_split_raws():
+def test_split_rows():
     path = "test_file.csv"
     file = data_csv.preprocesData(path)
-    file.split_raws()
+    file.split_rows()
     assert file.rows == [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
 
 def test_transpoze():
     path = "test_file.csv"
     file = data_csv.preprocesData(path)
-    file.split_raws()
+    file.split_rows()
     file.transpose()
     assert file.rows == [['1', '4', '7'], ['2', '5', '8'], ['3', '6', '9']]
 
@@ -38,7 +38,7 @@ def test_preper_file():
     path = "test_file.csv"
     file = data_csv.preprocesData(path)
     file.split_header()
-    file.split_raws()
+    file.split_rows()
     file.transpose()
     assert file.header == ['a', 'b', 'c']
     assert file.rows == [['1', '4', '7'], ['2', '5', '8'], ['3', '6', '9']]

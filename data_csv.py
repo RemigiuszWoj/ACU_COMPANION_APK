@@ -47,7 +47,7 @@ class preprocesData(fileCsv):
         header.pop()
         self.header = header
 
-    def split_raws(self) -> None:
+    def split_rows(self) -> None:
         split_rows = []
         rows = self.rows
         for row in rows:
@@ -61,5 +61,5 @@ class preprocesData(fileCsv):
 
     def preper_file(self) -> None:
         self.split_header()
-        self.split_raws()
+        self.split_rows()
         self.transpose()
