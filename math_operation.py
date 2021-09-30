@@ -1,4 +1,4 @@
-import ma
+import math
 
 class mathStatisticks():
     def sum_list(self, numbers:list) -> float:
