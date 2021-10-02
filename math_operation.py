@@ -1,8 +1,9 @@
 import math
 
-class mathStatisticks():
+class mathStatisticks:
     def sum_list(self, numbers:list) -> float:
         try:
+            print("no siema")
             return sum([float(i) for i in numbers]) 
         except ValueError:
             return "List must consist of numbers."
